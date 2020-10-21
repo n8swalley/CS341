@@ -18,16 +18,17 @@ int main()
     BitVector a = BitVector(3200000);
 
     std::ifstream fileToReadIn; //input stream handler
-    std::string nameOfInputFile = ""; //user input variable for filenamee
+    std::string nameOfInputFile = ""; //user input variable for filename
     std::ofstream fileToOutput;
+
     std::cout<<"Please enter the filename to read in: " << std::endl;
     std::cin >> nameOfInputFile;
     int temp(0);
     int freq(0);
     std::vector<int> duplicates;
     std::vector<int> bits;
-    std::vector<Dictionary> frequency;
-  
+    s
+    std::vector<bool> visited(duplicates.size(), false);
     fileToReadIn.open(nameOfInputFile.c_str());
     if(fileToReadIn.fail()) 
     {
@@ -63,7 +64,7 @@ int main()
     // }
   
     //file output
-std::vector<bool> visited(duplicates.size(), false); 
+
     for (int i = 0; i < duplicates.size(); i++) 
 	{ 
         if (visited[i] == true) 
@@ -77,12 +78,9 @@ std::vector<bool> visited(duplicates.size(), false);
 			{ 
                visited[j] = true; 
                count++; 
-           } 		
+           } 
 }
-	    Dictionary newEntry(duplicates[i], count);
-	    frequency.push_back(newEntry);
 }
-	
     fileToOutput.open("duplicates.txt");
     if(fileToOutput.fail())
     {
@@ -90,14 +88,13 @@ std::vector<bool> visited(duplicates.size(), false);
     }
     else 
     {
-	
-	for(Dictionary entry : frequency)
-	{
-    
-   	 }
-		fileToOutput << entry.getID() << " " << entry.getValue() << std::endl;
-	}
-
+	int count(2);
+        for(int i=0; i < duplicates.size(); i++)
+        {
+            Dictionary newEntry(duplicates[i], count);
+	    frequency.push_back(newEntry);
+            fileToOutput<<duplicates[i] << " " << count << std::endl;
+        }
     }
     return 0;
 }

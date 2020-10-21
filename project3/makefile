@@ -1,20 +1,17 @@
-A2.exe: driver.o LinkedList.o DoubleLinkedList.o LinkedNode.o Node.o
-	g++ driver.o LinkedList.o DoubleLinkedList.o LinkedNode.o Node.o -o A2.exe
+A3.exe: driver.o Node.o Dictionary.o BitVector.o 
+	g++ driver.o Node.o Dictionary.o BitVector.o -o A3.exe
 
 driver.o: driver.cpp
 	g++ -c driver.cpp -o driver.o
 
-DoubleLinkedList.o: DoubleLinkedList.cpp
-	g++ -c DoubleLinkedList.cpp -o DoubleLinkedList.o
+Dictionary.o: Dictionary.cpp
+	g++ -c Dictionary.cpp -o Dictionary.o
 
-LinkedList.o: LinkedList.cpp
-	g++ -c LinkedList.cpp -o LinkedList.o
-
-LinkedNode.o: LinkedNode.cpp
-	g++ -c LinkedNode.cpp -o LinkedNode.o
+BitVector.o: BitVector.cpp
+	g++ -c BitVector.cpp -o BitVector.o
 	
 Node.o: Node.cpp
 	g++ -c Node.cpp -o Node.o
 	
 clean:
-	rm -f driver.o Node.o LinkedNode.o LinkedList.o DoubleLinkedList.o A2.exe
+	rm -f driver.o Node.o BitVector.o Dictionary.o A3.exe

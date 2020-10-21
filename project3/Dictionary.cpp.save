@@ -1,0 +1,22 @@
+// Honor Pledge:
+//
+// I pledge that I have neither given nor 
+// received any help on this assignment.
+//
+// n8swalley & k8edwards
+#include "Dictionary.h"
+Dictionary::Dictionary()
+{
+
+}
+
+int Dictionary::newEntry( duplicates, int count)
+{
+	new Node(id_->duplicates[i]); // i think??
+	new Node(data_->count);
+	
+}
+    return freq;
+
+}
+

@@ -6,15 +6,22 @@
 // n8swalley & k8edwards
 #ifndef NODE_H_
 #define NODE_H_
-class Node {
-public: 
-	Node(); 
-	virtual ~Node() {}; 
-	// virtual void setData(int data);
-	//virtual int getData();
+#include <iostream>
+#include <bitset>
+#include <string>
+#include <vector>
 
-	int data; 
-// protected:
-// 	Node();
+class Node 
+{
+    public: 
+        Node();
+        Node(int data); 
+        virtual ~Node() {}; 
+        virtual void setData(int data);
+        virtual int getData();
+    private:
+        int data_;
+    //protected:
+        
 };   
 #endif

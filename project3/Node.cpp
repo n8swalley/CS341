@@ -7,27 +7,22 @@
 
 #include "Node.h"
 
-Node::Node()
+Node::Node(int data) : data_(data)
 {
-	//int data;
+
 }
-// Node::Node(int data) : data_(data) 
-// {
 
-// }
+Node::Node() : data_(0)
+{
 
-// Node::Node() : data_(0)
-// {
+}
 
-// }
+void Node::setData(int data)
+{
+    data_ = data;
+}
 
-// void Node::setData(int data)
-// {
-// 	data_ = data;
-
-// }
-
-// int Node::getData()
-// {
-// 	return data;
-// }
+int Node::getData()
+{
+    return data_;
+}
